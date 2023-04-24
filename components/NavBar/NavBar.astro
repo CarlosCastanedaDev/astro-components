@@ -1,0 +1,142 @@
+---
+import { SITE } from '../utils/config';
+---
+<header>
+  <div
+    class='mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;'>
+    <div
+      class='relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;'>
+      <a
+        href='/'
+        class='absolute py-1 text-xl font-semibold sm:static sm:text-2xl'
+        >{SITE.title}</a
+      >
+      <nav
+        id='nav-menu'
+        class='flex w-full flex-col items-center bg-red sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0 outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;'>
+        <button
+          class='hamburger-menu self-end p-2 sm:hidden'
+          aria-label='Open Menu'
+          aria-expanded='false'
+          aria-controls='menu-items'>
+          <div
+            class='icon-container h-5 w-6 flex flex-col items-end justify-between'>
+            <div id='first-line' class='h-0.5 bg-black transition-all w-full'>
+            </div>
+            <div id='second-line' class='h-0.5 bg-black transition-all w-3/4'>
+            </div>
+            <div id='third-line' class='h-0.5 bg-black transition-all w-1/2'>
+            </div>
+          </div>
+        </button>
+        <ul
+          id='menu-items'
+          class='sm:flex hidden mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-y-2 gap-x-2 sm:mt-0 sm:ml-0 sm:w-auto sm:gap-y-0 sm:gap-x-5'>
+          <li class='col-span-2 flex items-center justify-center'>
+            <a
+              href='/about'
+              class='w-full px-4 py-3 text-center font-medium hover:text-indigo-500 sm:my-0 sm:px-2 sm:py-1;'>
+              About</a
+            >
+          </li>
+          <li class='col-span-2 flex items-center justify-center'>
+            <a
+              href='/projects'
+              class='w-full px-4 py-3 text-center font-medium hover:text-indigo-500 sm:my-0 sm:px-2 sm:py-1;'>
+              Projects</a
+            >
+          </li>
+          <li class='col-span-2 flex items-center justify-center'>
+            <a
+              href='/posts'
+              class='w-full px-4 py-3 text-center font-medium hover:text-indigo-500 sm:my-0 sm:px-2 sm:py-1;'>
+              Posts</a
+            >
+          </li>
+          <li class='col-span-2 flex items-center justify-center'>
+            <a
+              href='/tags'
+              class='w-full px-4 py-3 text-center font-medium hover:text-indigo-500 sm:my-0 sm:px-2 sm:py-1;'>
+              Tags</a
+            >
+          </li>
+          <li
+            class='w-full col-span-1 px-4 py-3 text-center font-medium hover:text-indigo-500 sm:my-0 sm:px-2 sm:py-1'>
+            {
+              SITE.lightAndDarkMode && (
+                <button
+                  id='theme-btn'
+                  class='outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed p-3 sm:p-1'
+                  title='Toggles light & dark'
+                  aria-label='auto'
+                  aria-live='polite'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    id='moon-svg'
+                    class='scale-125 hover:rotate-12 sm:scale-100'>
+                    <path d='M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z' />
+                  </svg>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    id='sun-svg'
+                    class='scale-125 hover:rotate-12 sm:scale-100'>
+                    <path d='M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z' />
+                  </svg>
+                </button>
+              )
+            }
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  #sun-svg,
+  html[data-theme='dark'] #moon-svg {
+    display: none;
+  }
+  #moon-svg,
+  html[data-theme='dark'] #sun-svg {
+    display: block;
+  }
+</style>
+
+<script>
+  // Toggle menu
+  const menuBtn = document.querySelector('.hamburger-menu');
+  const menuItems = document.querySelector('#menu-items')?.classList;
+
+  const iconContainer = document.querySelector('.icon-container')?.classList;
+  const firstLine = document.querySelector('#first-line')?.classList;
+  const secondLine = document.querySelector('#second-line ')?.classList;
+  const thirdLine = document.querySelector('#third-line')?.classList;
+
+  menuBtn?.addEventListener('click', function () {
+    const menuExpanded = menuBtn?.getAttribute('aria-expanded');
+    if (menuExpanded === 'false') {
+      menuBtn?.setAttribute('aria-expanded', 'true');
+      menuBtn?.setAttribute('aria-label', 'Close Menu');
+      menuItems?.remove('hidden');
+
+      // icon animation
+      iconContainer?.remove('flex');
+      iconContainer?.add('relative');
+      firstLine?.add('rotate-45', 'absolute', 'bottom-1/2');
+      thirdLine?.add('hidden');
+      secondLine?.add('!w-full', '-rotate-45', 'absolute', 'bottom-1/2');
+    } else {
+      menuBtn?.setAttribute('aria-expanded', 'false');
+      menuBtn?.setAttribute('aria-label', 'Open Menu');
+      menuItems?.add('hidden');
+
+      // icon animation
+      iconContainer?.add('flex');
+      iconContainer?.remove('relative');
+      firstLine?.remove('rotate-45', 'absolute', 'bottom-1/2');
+      thirdLine?.remove('hidden');
+      secondLine?.remove('!w-full', '-rotate-45', 'absolute', 'bottom-1/2');
+    }
+  });
+</script>
